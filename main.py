@@ -1,4 +1,10 @@
 """
+# INSTALL
+pip install mysql-connector-python
+
+# IMPORT
+import mysql.connector
+
 # CONNECT
 connection = mysql.connector.connect(
     host="localhost",
@@ -23,6 +29,10 @@ cursor.execute(command)
 result = cursor.fetchall()
 for product in result:
     print(f"{product[0]} - {product[1]} - R${product[2]:.2f}")
+
+output example:
+3 - todynho - R$4.00
+3 - todynho - R$6.00
 
 # UPDATE
 nome_produto = "todynho"
@@ -99,7 +109,7 @@ def main():
     table = read(cursor)
     for product in table:
         print(f"{product[0]} - {product[1]} - R${product[2]:.2f}")
-    
+
     delete(connection, cursor, 'nome_produto = "todynho"')
 
     cursor.close()
