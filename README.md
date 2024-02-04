@@ -1,18 +1,18 @@
 # Python MySQL CRUD
 
-## Feature and syntax notes
+Some notes on how to connect a MySQL database using Python 3.12
 
-### INSTALL
+## INSTALL
 ```
 pip install mysql-connector-python
 ```
 
-### IMPORT
+## IMPORT
 ```
 import mysql.connector
 ```
 
-### CONNECT
+## CONNECT
 ```
 connection = mysql.connector.connect(
     host="localhost",
@@ -24,7 +24,7 @@ connection = mysql.connector.connect(
 cursor = connection.cursor()
 ```
 
-### CREATE
+## CREATE
 ```
 nome_produto = "todynho"
 valor = 3
@@ -34,7 +34,7 @@ cursor.execute(command)
 connection.commit()
 ```
 
-### READ
+## READ
 ```
 command = 'SELECT * FROM vendas'
 cursor.execute(command)
@@ -49,7 +49,7 @@ output example:
 3 - todynho - R$6.00
 ```
 
-### UPDATE
+## UPDATE
 ```
 nome_produto = "todynho"
 valor = 3
@@ -59,7 +59,7 @@ cursor.execute(command)
 connection.commit()
 ```
 
-### DELETE
+## DELETE
 ```
 nome_produto = "todynho"
 
@@ -68,7 +68,7 @@ cursor.execute(command)
 connection.commit()
 ```
 
-### CLOSE
+## CLOSE
 ```
 cursor.close()
 connection.close()
